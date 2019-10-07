@@ -114,7 +114,7 @@ def pay():
 
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'modelfruit.h5'
+MODEL_PATH = 'fruitmodel.h5'
 
 # Load your trained model
 model = load_model(MODEL_PATH)
@@ -129,7 +129,7 @@ print('Model loaded. Start serving...')
 
 def init():
     global model
-    model = load_model('modelfruit.h5')
+    model = load_model('fruitmodel.h5')
 global graph
 graph = tf.get_default_graph()
     #return graph
