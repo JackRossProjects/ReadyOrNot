@@ -13,25 +13,15 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/narrow-jumbotron.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   </head>
 
   <body>
 
     <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Purchase</h3>
-      </div>
-
       <div class="jumbotron">
         <h1 class="display-3">ReadyOrNot<br>Ripe Fruit Detector</h1>
-        <p class="lead">Check to see if your fruit are ready to eat for only $5</p>
+        <p class="lead">Check to see if your fruits are ready to eat for only $5</p>
         <form action="{{ url_for('pay') }}" method="POST">
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -39,7 +29,7 @@
             data-amount="500"
             data-name="ReadyOrNot"
             data-description="Ripe Fruit Detection"
-            data-image="https://i.imgur.com/GZMgrNU.jpg"
+            data-image="https://i.gyazo.com/bc0db091bb87c2e82cf308c41bbed86d.png"
             data-locale="auto">
           </script>
         </form>
@@ -47,11 +37,6 @@
         <img src="{{url_for('static', filename='eatnowbuylater.jpg')}}" width="600px" height="433px" class="img-responsive" />
 
       </div>
-
-      <footer class="footer">
-        <p>&copy; ReadyOrNot 2019</p>
-      </footer>
-
     </div> <!-- /container -->
 
   </body>
