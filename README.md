@@ -1,6 +1,6 @@
-#Live site: https://readyornot.onrender.com/
+# Live site: https://readyornot.onrender.com/
 
-#Features:
+# Features:
 - User Authentication
 - Stripe Paywall
 - Image Classifier
