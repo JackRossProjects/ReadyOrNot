@@ -113,13 +113,11 @@ def pay():
     return redirect(url_for('predict'))
 
 
-
 # Model saved with Keras model.save()
 MODEL_PATH = 'modelfruit.h5'
 
-#Load your trained model
+# Load your trained model
 model = load_model(MODEL_PATH)
-
 model._make_predict_function()          # Necessary
 print('Model loaded. Start serving...')
 
@@ -142,7 +140,7 @@ def model_predict(img_path, model):
 
     # Preprocessing the image
     x = image.img_to_array(img)
-    x = np.true_divide(x, 255)
+    # x = np.true_divide(x, 255)
     x = np.expand_dims(x, axis=0)
 
     # Be careful how your trained model deals with the input
@@ -153,17 +151,16 @@ def model_predict(img_path, model):
     return preds
 
 
-@app.route('/', methods=['GET'])
-def index():
+#@app.route('/', methods=['GET'])
+#def index():
     # Main page
-    return render_template('index.html')
+    #return render_template('index.html')
 
 
 @app.route('/predict', methods=['GET', 'POST'])
-
 def upload():
     if request.method == 'POST':
-#        # Get the file from post request
+        # Get the file from post request
         f = request.files['image']
 
         # Save the file to ./uploads
@@ -173,13 +170,13 @@ def upload():
         f.save(file_path)
 
         # Make prediction
-        graph = tf.get_default_graph()
+        #graph = tf.get_default_graph()
         with graph.as_default():
                 preds = model_predict(file_path, model)
 
             # Process your result for human
                 pred_class = preds.argmax(axis=-1)            # Simple argmax
-                pred_class = decode_predictions(preds, top=1)   # ImageNet Decode
+                #pred_class = decode_predictions(preds, top=1)   # ImageNet Decode
                 result = str(pred_class[0])
                 return result
 
@@ -189,10 +186,9 @@ def upload():
 
 
 
-
 if __name__ == '__main__':
-    app.run(port=5002, debug=True)
-    app.run(debug=True)
+    # app.run(port=5002, debug=True)
+    #app.run(debug=True)
 
     # Serve the app with gevent
     #
