@@ -114,18 +114,18 @@ def pay():
 
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'modelfruit.h5'
+#MODEL_PATH = 'modelfruit.h5'
 
 # Load your trained model
-model = load_model(MODEL_PATH)
-model._make_predict_function()          # Necessary
+#model = load_model(MODEL_PATH)
+#model._make_predict_function()          # Necessary
 print('Model loaded. Start serving...')
 
 # You can also use pretrained model from Keras
 # Check https://keras.io/applications/
-#from keras.applications.resnet50 import ResNet50
-#model = ResNet50(weights='imagenet')
-#print('Model loaded. Check http://127.0.0.1:5000/')
+from keras.applications.resnet50 import ResNet50
+model = ResNet50(weights='imagenet')
+print('Model loaded. Check http://127.0.0.1:5000/')
 
 def init():
     global model
