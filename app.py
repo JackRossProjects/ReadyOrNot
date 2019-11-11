@@ -115,7 +115,7 @@ def pay():
 
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'modelfood.h5'
+MODEL_PATH = 'modelfruit.h5'
 
 #Load your trained model
 model = load_model(MODEL_PATH)
