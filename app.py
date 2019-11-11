@@ -129,7 +129,7 @@ print('Model loaded. Start serving...')
 
 def init():
     global model
-    model = load_model('modelfruit.h5')
+    model = load_model('https://www.dropbox.com/s/3x66dm6h52ynz8b/fullfood.pkl?raw=1')
 global graph
 graph = tf.get_default_graph()
     #return graph
