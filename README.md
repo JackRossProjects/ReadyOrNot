@@ -1,4 +1,4 @@
-# Live site: https://readyornot.onrender.com/
+# ReadyOrNot
 
 # Features:
 - User Authentication
